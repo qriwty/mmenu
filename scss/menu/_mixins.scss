@@ -1,0 +1,28 @@
+// *** Mixins ***
+
+@mixin transform-gpu($transform-gpu) {
+  @if $transform-gpu == true {
+    transform: translate3d(100%, 0, 0);
+  }
+
+  @if $transform-gpu == false {
+    transform: translateX(100%);
+  }
+}
+@mixin transform-gpu-active($transform-gpu) {
+  @if $transform-gpu == true {
+    transform: translate3d(0, 0, 0);
+  }
+  @if $transform-gpu == false {
+    transform: translateX(0);
+  }
+}
+@mixin menu-border-left($menu-border-left) {
+  @if $menu-border-left == false {
+    border-left: none;
+  }
+
+  @if $menu-border-left == true {
+    border-left: $menu-border-value $menu-border-color;
+  }
+}

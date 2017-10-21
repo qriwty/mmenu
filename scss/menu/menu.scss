@@ -1,0 +1,29 @@
+/*
+  | Menu |
+*/
+
+// *** Import ***
+@import "_variables",
+        "_mixins";
+
+// *** Styles ***
+.menu {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  width: $menu-width;
+  transition-property: transform;
+  background-color: $menu-background-color;
+  transition-duration: $menu-transition-duration;
+  @include transform-gpu($transform-gpu);
+  @include menu-border-left($menu-border-left);
+
+  &.active {
+    @include transform-gpu-active($transform-gpu);
+  }
+}
+
+body {
+  overflow-x: hidden;
+}
